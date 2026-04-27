@@ -20,7 +20,7 @@ php/
 
 ## The Adventurer (Me)
 
-<h2 align="center">Ephantus Mwangi</h2>
+<h2 align="center">Ephantus Mwangi Kamau</h2>
 <table>
   <tbody>
     <tr>
