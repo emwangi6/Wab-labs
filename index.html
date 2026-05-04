@@ -17,6 +17,23 @@
     <title>GTA VI</title>
     <!-- Other elements that go here -->
     <!-- style, scripts,favicon -->
+     <style>
+        h1{
+            color : blue;
+            font-size:48px;
+        }
+        /*a class selector (starts with a dot)*/
+        .section-heading{
+            color:green;
+        }
+        /*an id selector start with a #*/
+        /*only one element*/
+        #about{
+            background-color: aliceblue;
+        }
+
+     </style>
+     <link rel="stylesheet" href="css/style.css"
 
 </head>
 <!-- 6.  the body (content goes here)-->
@@ -25,7 +42,7 @@
     <!-- Add header semantic tag -->
     <!-- Add main heading -->
     <!-- Make "Rockstar Games" bold -->
-    <header>
+    <header style="background-color:lightcoral">
         <!--h1,h2,h3,h4,h5,h6-->
         <h1>Grand Theft Auto VI</h1>
         <p>
@@ -33,6 +50,7 @@
             <b>Rockstar Games</b>.
         </p>
     </header>
+    
 
     <!-- Add navigation semantic tag -->
     <!-- Convert items into an unordered list -->
@@ -72,7 +90,7 @@
     <!-- Add main semantic tag -->
     <main>
         <section id="about">
-            <h2> About the Game</h2>
+            <h2 class="Section-heading"> About the Game</h2>
             <p>
                 <b>GTA 6 </b>is expected to take players back to <i>Vice City</i> with a massive open world,
                 new characters,
@@ -83,7 +101,7 @@
 
         </section>
         <section id="features">
-            <h2>Expected Features</h2>
+            <h2 class="section-heading">Expected Features</h2>
 
             <h4>Gameplay Features</h4>
 
@@ -106,7 +124,8 @@
 
         </section>
         <section id ="Characters">
-          <h5>Lucia</h5>
+            <h2 class="section-heading">Character</h2>
+          <h5 >Lucia</h5>
           <p> Lucia is one of the <b>first female protagonists </b>
             in GTA history. She is known for her bold personality and criminal
     background. </p>
@@ -115,7 +134,7 @@
     <p>Jason partners with Lucia in a story inspired by <i>Bonnie and Clyde-style</i> adventures.</p>
         </section>
         <section id="logo">
-          <h2>Game Perview</h2>
+          <h2 class="section-heading">Game Perview</h2>
           <img src="https://www.rockstargames.com/VI/_next/image?url=%2FVI%2F_next%2Fstatic%2Fmedia%2FJason_and_Lucia_01_With_Logos_landscape.8596f77a.jpg&w=3840&q=75
  " alt="GTA 6 Logo image" width="50%">
           
