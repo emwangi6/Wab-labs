@@ -1,3 +1,22 @@
 #features{
   background-color:beige;
 }
+body,header,h1,section{
+  border-style:dotted;
+  border-color:turquoise;
+  border-width:2px;
+}
+h1{
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:10px;
+  padding-right:10px;
+  /*short hard*/
+  padding:10px;
+  /*TRouBLe*/
+  padding:5px 10px 13px 50px;
+
+  /*applies to all the margins*/
+  margin:5px;
+}
+
