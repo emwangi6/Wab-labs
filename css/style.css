@@ -17,14 +17,7 @@ Variables defined here become available everywhere in the stylesheet.
 */
 
 :root {
-  h1{
-    /*color:crimson;*/
-    color:#ff0000;
-    background-color:rgb(0,0,0);
-    border-color:rgba(255,0,0,0.1);
-}
-
-
+ 
     /* ===============================
        BACKGROUND COLORS
        =============================== */
@@ -76,7 +69,15 @@ example usage
 using the var keyword
 */
 body{
-color: var(--col-coral)
+   /*Have a default font so two values in the font */
+   font-family:'Instrument Sans','sans-serif';
+   font-size:12px;
+   font-weight:400;
+   font-style:normal;
+
+}
+h1,h2{
+   font-family:'Young Serif','serif';
 }
 
 
