@@ -71,13 +71,55 @@ using the var keyword
 body{
    /*Have a default font so two values in the font */
    font-family:'Instrument Sans','sans-serif';
-   font-size:12px;
+   font-size:16px;
    font-weight:400;
    font-style:normal;
+   background-color:var(--col-cream);
+   /*short hard*/
+   margin: 0;
+   /*Long hand version*/
+   margin-top:0;
+   margin-right:0;
+   margin-bottom:0;
+   margin-left:0;
+   line-height : 1.7;
 
 }
 h1,h2{
    font-family:'Young Serif','serif';
+}
+header{
+   /*Box model ( Padding ) */
+   padding-top:5px;
+   padding-bottom:30px;
+   
+   /*Box model( border ) */
+   border-bottom-width:2px;
+   border-bottom-style:solid;
+   border-bottom-color:var(--col-cyan);
+
+   text-align:center;
+}
+
+header h1{ 
+   /*Units
+   
+   */
+   font-size:3.5em; /* 3.5 *16 px ,parent font size*/
+   letter-spacing:8px;
+   text-transform:uppercase;
+   color : var(--col-coral);
+
+   margin-left:8px;
+   margin-bottom:0;
+   margin-top:0;
+   margin-right:0;
+}
+ /* Direct child selector*/
+header > b{
+   color:var(--col-sunset);
+   letter-spacing:2px;
+   font-size: 0.95em;/*Relative to the parent's font size*/
 }
 
 
