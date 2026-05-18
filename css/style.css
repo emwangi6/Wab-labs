@@ -121,5 +121,40 @@ header > b{
    letter-spacing:2px;
    font-size: 0.95em;/*Relative to the parent's font size*/
 }
+nav{
+   margin-top:10px;
+}
+/*Child selctor*/
+nav ul{
+   list-style:none;
+   padding: 0;
+   margin :0;
+
+   display:flex;
+   justify-content:center;
+   gap:10px;
+   
+}
+/*Child selctor*/
+nav ul li a{
+   color :var(--col-bg-deep);
+   text-decoration:none;
+   font-size:1.1em;
+   letter-spacing:2px;
+   text-transform:uppercase;
+   /*Top and bottom 8 px   right and left 18px*/
+   padding:8px 18px;
+   border:1px solid var(--col-cyan-light);
+   /*Long hand*/
+   border-width:1px;
+   border-style:solid;
+   border-color:var(--col-cyan-light);
+   border-radius:8px;
+}
+/**Pseudo-class selector :hover , :root*/
+nav ul li a:hover{
+   background-color:var(--col-cyan);
+   border-color:var(--col-pink-soft);
+}
 
 
