@@ -183,7 +183,7 @@ section{
 section:hover{
    border-left-color:var(--col-cyan)
 }
-p{
+p , h4{
    color: var(--col-cream);
 }
 h5{
@@ -198,6 +198,26 @@ main i{
 h2{
    color:var(--col-sunset);
    border-bottom:2px solid var(--col-sunset)
+}
+main ul, main ol{
+   padding-left:24px;
+   color:var(--col-cream);
+
+}
+main li{
+   margin-left:4px;
+}
+/*Pseudo class selector (state)*/
+li:first-child{
+   color : var(--col-pink-soft);
+   font-weight:bold;
+}
+/*Pseudo element selctor (parst of an element)*/
+main ul li::marker{
+   color:var(--col-cyan);
+}
+main ol li ::marker{
+   color : var(--col-coral);
 }
 
 
