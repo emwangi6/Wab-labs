@@ -51,3 +51,87 @@ console.log(add(4,2))
 const multiply = ( x , y ) => x * y;
 
 console.log(multiply (2,3))
+
+const scores=[45,56,67,67,78]
+
+//access
+console.log(scores[4])
+console.log(scores[2])
+console.log(scores[0])
+console.log(scores[1])
+
+let student_names = ["Omondi","Wafula","Kiprotich","Nyambane"]
+console.log(student_names[2])
+
+let governors=[
+  [47 , "Johnson Sakaja"],
+  [1,"Abdullswamad Sheriff"],
+  [21,"Irungu Kang'ata"]
+
+]
+console.log("The governor if County number" , governors[1][0], "is called " , governors[1][1])
+
+//Map(Perform operation on each element)
+let double_scores=scores.map(x => x * 2)
+console.log(double_scores)
+
+//properties
+console.log("The class has" , student_names.length , "Student")
+console.log("Kenya has " , governors.length , "Governors")
+
+for( let index in scores){
+  console.log(scores[index])
+}
+for( let score of scores){
+  console.log(score)
+}
+scores.forEach(function(score){
+  console.log("Score" ,score)
+});
+const student=
+{
+  name: "Alice",
+  age : 20,
+  passed : "true",
+  grade : 'A',
+  "admission number" : 183380,
+  course : "BBIT",
+  group : "2A",
+  attendance:20,
+  addattendance: function(){
+    this.attendance +=1
+    
+  }
+
+
+}
+console.log("My name is " ,student.name ,"from", student["admission number"] , "  Universtity")
+student.addattendance()
+console.log(student.attendance)
+
+let bbit_2b_students=[
+  {adm : 2223251 , name :"Blessing"},
+  {adm : 192977 , name : 'Ryan'},
+  {adm : 222024 , name : 'Ambrose'},
+  {adm : 220941 , name : 'Neema'},
+
+]
+bbit_2b_students.forEach(function(student)
+{
+  console.log(student.name)
+})
+
+
+for (let student of bbit_2b_students) {
+  console.log(student.name);
+}
+
+//getting the key of an object as a array
+console.log(student.keys())
+
+//getting the values of an object as an array
+console.log(student.value())
+
+//getting both keys and values of an object as an array
+console.log(student.entries())
+
