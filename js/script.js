@@ -127,11 +127,12 @@ for (let student of bbit_2b_students) {
 }
 
 //getting the key of an object as a array
-console.log(student.keys())
+console.log(Object.keys(student));
 
 //getting the values of an object as an array
-console.log(student.value())
+console.log(Object.values(student));
 
 //getting both keys and values of an object as an array
-console.log(student.entries())
+console.log(Object.entries(student));
+//
 
