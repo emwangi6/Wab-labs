@@ -152,3 +152,36 @@ console.log(navlinks)
 let aboutParagraph = document.querySelector("#about p")
 aboutParagraph.textContent ="This text was changed!"
 aboutParagraph.style.color = "red"
+
+//setting/settor - updating the page from js
+//via the DOM
+previewimage.setAttribute("title","New Title of image")
+previewimage.setAttribute("alt","New alternate text for the image")
+console.log(previewimage.alt)
+console.log(previewimage.title)
+
+//Event Handling - Events (user events -clicks, key events , scroll)
+//get the element of interest -button with an id of changeTextBtn
+let changeTextBtn = document.querySelector("#changeTextBtn")
+let demoText = document.querySelector("#demoText")
+
+changeTextBtn.addEventListener("click",function(event){
+
+  demoText.textContent ="I have been changed";
+  demoText.style.color ="red";
+
+})
+let highlightSectionbtn = document.querySelector("#highlightSectionsBtn");
+
+highlightSectionbtn.addEventListener("click", function () {
+    let sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+        section.classList.toggle("section-highlight");
+    });
+});
+document.querySelector("#nameInput").addEventListener("input",function(event){
+    document.querySelector('#nameOutput').textContent =
+    "Hello " + document.querySelector(' #nameInput').value + ' !'
+})
+ 
