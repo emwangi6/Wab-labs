@@ -184,4 +184,50 @@ document.querySelector("#nameInput").addEventListener("input",function(event){
     document.querySelector('#nameOutput').textContent =
     "Hello " + document.querySelector(' #nameInput').value + ' !'
 })
+
+//case 4 - character counter
+let gtaCommnetTextArea = document.querySelector('#commentInput');
+let CharCountParagraph = document.querySelector('#charCount')
+
+gtaCommnetTextArea.addEventListener("input",function(e){
+  //console.log('Typing...')
+  //count the number characters
+  let numberOfChars = gtaCommnetTextArea.value.length;
+  //console.log('Number of character: ' , numberOfChars)
+  //update the paragraph
  
+  //prevent the user from typing after 60 characters
+   if (numberOfChars > 60) {
+    gtaCommnetTextArea.value = gtaCommnetTextArea.value.slice(0, 60);
+    numberOfChars = 60;
+  }else{
+     CharCountParagraph.textContent = 'Characters: ' + numberOfChars
+
+  }
+})
+//CASE 5 - KEYBOARD EVENTS
+let KeyOutputParagraph = document.querySelector('#keyOutput');
+document.addEventListener('keydown',function(event){
+  KeyOutputParagraph.textContent ="You pressed: "+ event.key;
+})
+
+//CASE 6 - TODO LIST , WISHLIST 
+let wishListInput = document.querySelector('#wishlistInput');
+let wishListButton = document.querySelector('#wishlistForm button');
+let wishListItems = document.querySelector('#wishlistItems');
+wishListButton.addEventListener('click',function(event){
+  event.preventDefault();
+  let wishListInputValue=wishListInput.value;
+  
+
+  if(wishListInputValue!=""){
+  //console.log(wishListInputValue)
+  let li = document.createElement("li")
+  let button = document.createElement('button')
+  button.textContent = 'Delete';
+  li.textContent= wishListInputValue;
+  wishListItems.appendChild(li);
+
+  wishListInput.value = "";
+  }
+})
