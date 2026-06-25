@@ -211,7 +211,7 @@ document.addEventListener('keydown',function(event){
   KeyOutputParagraph.textContent ="You pressed: "+ event.key;
 })
 
-//CASE 6 - TODO LIST , WISHLIST 
+//CASE 6A - TODO LIST , WISHLIST 
 let wishListInput = document.querySelector('#wishlistInput');
 let wishListButton = document.querySelector('#wishlistForm button');
 let wishListItems = document.querySelector('#wishlistItems');
@@ -226,8 +226,71 @@ wishListButton.addEventListener('click',function(event){
   let button = document.createElement('button')
   button.textContent = 'Delete';
   li.textContent= wishListInputValue;
+  button.addEventListener("click", event=>{
+    li.remove();
+  })
+  li.appendChild(button);
   wishListItems.appendChild(li);
+  
+
 
   wishListInput.value = "";
   }
 })
+//Case 6b - removing items from the wish list
+let deleteButtons = document.querySelectorAll("#wishlistItems button");
+console.log(deleteButtons)
+deleteButtons.forEach(button=> {
+  button.addEventListener("click",event=>{
+    //console.log("Delete button clicked");
+    
+    //#wishlistItems li
+    //#wishlistItems> li
+    //#wishlistItems li:first
+    //let first_li = document.querySelector('#wishlistItems li');//first one
+    //first_li.remove();
+
+    //@TODO , how do you use parent , parentElement
+    button.closest("li").remove();
+  })
+})
+
+//case 7 - submit form / validation
+//show what someone filled in the form
+let submitButton  = document.querySelector('#feedbackForm button');
+let feedbackForm  = document.querySelector('#feedbackForm');
+let feedbackOutput  = document.querySelector('#feedbackOutput');
+
+feedbackForm.addEventListener('submit', event=>{
+  event.preventDefault();
+  console.log("Submit button clicked")
+  const name = document.querySelector('#fanName');
+  const email = document.querySelector('#fanEmail');
+  const message = document.querySelector('#fanMessage');
+  feedbackOutput.innerHTML=
+  "<strong> Fan feedback submitted </strong> <br>"+
+  "<p>" + name.value + "</p>"+
+  "<p>" + email.value+ "</p>"+
+  "<p>" + message.value + "</p>"
+  name.value='';
+  email.value='';
+  message.value='';
+  feedbackOutput.classList.add('success-text')
+})
+
+// forgot
+
+let resetBtn = document.querySelector("#resetBtn");
+resetBtn.addEventListener("click", event => {
+  // undo the changed text
+  demoText.textContent =
+    "Click the button to modify this text using JavaScript.";
+  demoText.style.color = "white";
+  demoText.style.fontSize = "16px"; //has no effect
+
+  //undo the highlight of the sections
+  //toggle will remove if present or add if absent
+  document.querySelectorAll("section").forEach(function (section) {
+    section.classList.remove("section-highlight");
+  });
+});
