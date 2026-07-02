@@ -1,0 +1,296 @@
+/*let age=20;
+var course ="BBIT";
+const university = "Strathmore University";
+
+//let age=22
+//var course ="BCOM"
+//const university = "KCA University"
+if (true){
+  let time = "11:30"
+  var day = "Monday"
+  const year =2024
+}
+console.log(year)*/
+
+/**
+ * function that caclute the are of a rectangle
+ * @param {int} height
+ * @param {int} width
+ * @return area
+ */
+
+function calculateArea(height , width)
+{
+  if ( height == null )
+    {
+    return console.log('Height missing !')
+    
+    }
+  else if (width == null )
+    {
+    return console.log('width missing !')
+    }
+  else
+    {
+    let area = height * width
+    return area
+    }
+}
+console.log(calculateArea(20,3))
+console.log(calculateArea(20))
+console.log(calculateArea())
+
+//function expression
+const add = function (number_1 , number_2)
+{
+  return number_1 +  number_2
+}
+console.log(add(4,2))
+
+//arrow Functions
+const multiply = ( x , y ) => x * y;
+
+console.log(multiply (2,3))
+
+const scores=[45,56,67,67,78]
+
+//access
+console.log(scores[4])
+console.log(scores[2])
+console.log(scores[0])
+console.log(scores[1])
+
+let student_names = ["Omondi","Wafula","Kiprotich","Nyambane"]
+console.log(student_names[2])
+
+let governors=[
+  [47 , "Johnson Sakaja"],
+  [1,"Abdullswamad Sheriff"],
+  [21,"Irungu Kang'ata"]
+
+]
+console.log("The governor if County number" , governors[1][0], "is called " , governors[1][1])
+
+//Map(Perform operation on each element)
+let double_scores=scores.map(x => x * 2)
+console.log(double_scores)
+
+//properties
+console.log("The class has" , student_names.length , "Student")
+console.log("Kenya has " , governors.length , "Governors")
+
+for( let index in scores){
+  console.log(scores[index])
+}
+for( let score of scores){
+  console.log(score)
+}
+scores.forEach(function(score){
+  console.log("Score" ,score)
+});
+const student=
+{
+  name: "Alice",
+  age : 20,
+  passed : "true",
+  grade : 'A',
+  "admission number" : 183380,
+  course : "BBIT",
+  group : "2A",
+  attendance:20,
+  addattendance: function(){
+    this.attendance +=1
+    
+  }
+
+
+}
+console.log("My name is " ,student.name ,"from", student["admission number"] , "  Universtity")
+student.addattendance()
+console.log(student.attendance)
+
+let bbit_2b_students=[
+  {adm : 2223251 , name :"Blessing"},
+  {adm : 192977 , name : 'Ryan'},
+  {adm : 222024 , name : 'Ambrose'},
+  {adm : 220941 , name : 'Neema'},
+
+]
+bbit_2b_students.forEach(function(student)
+{
+  console.log(student.name)
+})
+
+
+for (let student of bbit_2b_students) {
+  console.log(student.name);
+}
+
+//getting the key of an object as a array
+console.log(Object.keys(student));
+
+//getting the values of an object as an array
+console.log(Object.values(student));
+
+//getting both keys and values of an object as an array
+console.log(Object.entries(student));
+// DOM - Document Object Model (tree-like)
+console.log(document )
+
+//Elements on out page(variables)
+const heading = document.querySelector('#mainHeading')
+console.log(heading)
+const previewimage = document.querySelector('img')
+console.log(previewimage)
+const aboutsection = document.getElementById('about')
+console.log(aboutsection)
+const allsections = document.querySelectorAll('section')
+console.log(allsections)
+const navlinks = document.querySelectorAll('nav a')
+console.log(navlinks)
+
+let aboutParagraph = document.querySelector("#about p")
+aboutParagraph.textContent ="This text was changed!"
+aboutParagraph.style.color = "red"
+
+//setting/settor - updating the page from js
+//via the DOM
+previewimage.setAttribute("title","New Title of image")
+previewimage.setAttribute("alt","New alternate text for the image")
+console.log(previewimage.alt)
+console.log(previewimage.title)
+
+//Event Handling - Events (user events -clicks, key events , scroll)
+//get the element of interest -button with an id of changeTextBtn
+let changeTextBtn = document.querySelector("#changeTextBtn")
+let demoText = document.querySelector("#demoText")
+
+changeTextBtn.addEventListener("click",function(event){
+
+  demoText.textContent ="I have been changed";
+  demoText.style.color ="red";
+
+})
+let highlightSectionbtn = document.querySelector("#highlightSectionsBtn");
+
+highlightSectionbtn.addEventListener("click", function () {
+    let sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+        section.classList.toggle("section-highlight");
+    });
+});
+document.querySelector("#nameInput").addEventListener("input",function(event){
+    document.querySelector('#nameOutput').textContent =
+    "Hello " + document.querySelector(' #nameInput').value + ' !'
+})
+
+//case 4 - character counter
+let gtaCommnetTextArea = document.querySelector('#commentInput');
+let CharCountParagraph = document.querySelector('#charCount')
+
+gtaCommnetTextArea.addEventListener("input",function(e){
+  //console.log('Typing...')
+  //count the number characters
+  let numberOfChars = gtaCommnetTextArea.value.length;
+  //console.log('Number of character: ' , numberOfChars)
+  //update the paragraph
+ 
+  //prevent the user from typing after 60 characters
+   if (numberOfChars > 60) {
+    gtaCommnetTextArea.value = gtaCommnetTextArea.value.slice(0, 60);
+    numberOfChars = 60;
+  }else{
+     CharCountParagraph.textContent = 'Characters: ' + numberOfChars
+
+  }
+})
+//CASE 5 - KEYBOARD EVENTS
+let KeyOutputParagraph = document.querySelector('#keyOutput');
+document.addEventListener('keydown',function(event){
+  KeyOutputParagraph.textContent ="You pressed: "+ event.key;
+})
+
+//CASE 6A - TODO LIST , WISHLIST 
+let wishListInput = document.querySelector('#wishlistInput');
+let wishListButton = document.querySelector('#wishlistForm button');
+let wishListItems = document.querySelector('#wishlistItems');
+wishListButton.addEventListener('click',function(event){
+  event.preventDefault();
+  let wishListInputValue=wishListInput.value;
+  
+
+  if(wishListInputValue!=""){
+  //console.log(wishListInputValue)
+  let li = document.createElement("li")
+  let button = document.createElement('button')
+  button.textContent = 'Delete';
+  li.textContent= wishListInputValue;
+  button.addEventListener("click", event=>{
+    li.remove();
+  })
+  li.appendChild(button);
+  wishListItems.appendChild(li);
+  
+
+
+  wishListInput.value = "";
+  }
+})
+//Case 6b - removing items from the wish list
+let deleteButtons = document.querySelectorAll("#wishlistItems button");
+console.log(deleteButtons)
+deleteButtons.forEach(button=> {
+  button.addEventListener("click",event=>{
+    //console.log("Delete button clicked");
+    
+    //#wishlistItems li
+    //#wishlistItems> li
+    //#wishlistItems li:first
+    //let first_li = document.querySelector('#wishlistItems li');//first one
+    //first_li.remove();
+
+    //@TODO , how do you use parent , parentElement
+    button.closest("li").remove();
+  })
+})
+
+//case 7 - submit form / validation
+//show what someone filled in the form
+let submitButton  = document.querySelector('#feedbackForm button');
+let feedbackForm  = document.querySelector('#feedbackForm');
+let feedbackOutput  = document.querySelector('#feedbackOutput');
+
+feedbackForm.addEventListener('submit', event=>{
+  event.preventDefault();
+  console.log("Submit button clicked")
+  const name = document.querySelector('#fanName');
+  const email = document.querySelector('#fanEmail');
+  const message = document.querySelector('#fanMessage');
+  feedbackOutput.innerHTML=
+  "<strong> Fan feedback submitted </strong> <br>"+
+  "<p>" + name.value + "</p>"+
+  "<p>" + email.value+ "</p>"+
+  "<p>" + message.value + "</p>"
+  name.value='';
+  email.value='';
+  message.value='';
+  feedbackOutput.classList.add('success-text')
+})
+
+// forgot
+
+let resetBtn = document.querySelector("#resetBtn");
+resetBtn.addEventListener("click", event => {
+  // undo the changed text
+  demoText.textContent =
+    "Click the button to modify this text using JavaScript.";
+  demoText.style.color = "white";
+  demoText.style.fontSize = "16px"; //has no effect
+
+  //undo the highlight of the sections
+  //toggle will remove if present or add if absent
+  document.querySelectorAll("section").forEach(function (section) {
+    section.classList.remove("section-highlight");
+  });
+});
